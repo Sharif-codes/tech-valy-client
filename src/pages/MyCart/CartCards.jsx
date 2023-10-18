@@ -1,9 +1,42 @@
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 
-const CartCards = ({cart}) => {
+const CartCards = ({cart, cartProduct, setCartProduct}) => {
+    
     const { _id, photo, name, brand, type, description, price, rating } = cart
-    const handleCartDelete= ()=>{
-        fetch()
+
+    const handleCartDelete= _id=>{
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5300/cart/${_id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.deletedCount>0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                            const remaining= cartProduct.filter(item=> item._id!==_id )
+                            setCartProduct(remaining)
+                            
+                        }
+                    })
+            }
+        })
     }
 
     return (
@@ -18,8 +51,7 @@ const CartCards = ({cart}) => {
                     <p className="text-sm font-medium"> Rating:{rating}</p>
                     <div className="flex justify-around ">
                         
-                            <button onClick={handleCartDelete}  className="btn px-5 bg-pink-600 text-lg font-bold text-gray-800">Delete</button>
-                        
+                            <button onClick={()=>handleCartDelete(_id)}  className="btn px-5 bg-pink-600 text-lg font-bold text-gray-800">Delete</button>
 
                     </div>
 
