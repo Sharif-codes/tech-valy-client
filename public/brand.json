@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "brandName": "Apple",
+      "brandImage": "https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.jpg"
+    },
+    {
+      "id": 2,
+      "brandName": "Microsoft",
+      "brandImage": "https://images.squarespace-cdn.com/content/v1/524aecb0e4b0dba2694f10ee/1508736155827-F0DOSGVI9IUZ71T7GZAI/Logo_3c.jpg"
+    },
+    {
+      "id": 3,
+      "brandName": "Sony",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Sony_logos.JPG"
+    },
+    {
+      "id": 4,
+      "brandName": "Xiomi",
+      "brandImage": "https://logomakerr.ai/blog/wp-content/uploads/2022/04/Old-Xiaomi-logo-1.jpg"
+    },
+    {
+      "id": 5,
+      "brandName": "Samsung",
+      "brandImage": "https://images.samsung.com/is/image/samsung/assets/global/about-us/brand/logo/256_144_1.png?$512_N_PNG$"
+    },
+    {
+      "id": 6,
+      "brandName": "Intel",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/2/25/Intel_logo_%282006-2020%29.jpg"
+    }
+  ]
+  
