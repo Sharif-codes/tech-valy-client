@@ -1,11 +1,10 @@
+import { Link } from "react-router-dom";
 
 
 const ProductCard = ({products}) => {
-    const {photo,name,brand,type,description,price,rating}= products
+    const {_id,photo,name,brand,type,description,price,rating}= products
     console.log(photo)
-    const handleUpdateProduct= e=>{
-        e.preventDefault()
-    }
+    
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -18,7 +17,10 @@ const ProductCard = ({products}) => {
                         <p className="text-sm font-medium"> Rating:{rating}</p>
                         <div className="flex justify-around ">
                         <button className="btn px-5 bg-pink-600 text-lg font-bold text-gray-800">Details</button>
-                        <button onClick={handleUpdateProduct} className="btn px-5 bg-green-600 text-lg font-bold text-gray-800">Update</button>
+                        <Link to={`/updateProduct/${_id}`}>
+                        <button className="btn px-5 bg-green-600 text-lg font-bold text-gray-800">Update</button>
+                        </Link>
+                        
                         </div>
                         
                         
