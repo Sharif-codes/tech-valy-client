@@ -1,8 +1,9 @@
-# React + Vite
+# Live link of client side
+- https://tech-valy.web.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Features of my project
+- Products are available according to the brand name.
+- User can add, delete, and update brand products.
+- only authenticated user can for do these opration mentioned above.
+- user can add product to cart and also can delete it any time.
+- after successfull login user's name with picture will be visible at the top of the website

@@ -17,7 +17,7 @@ const Home = () => {
             name, location, comment
         }
         console.log(feedback)
-        fetch('http://localhost:5300/feedback', {
+        fetch('https://tech-valy-server-ot49yue2u-sharifs-projects-dda288d4.vercel.app/feedback', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

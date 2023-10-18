@@ -32,7 +32,7 @@ const router = createBrowserRouter([
             {
                 path: '/cart',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader: ()=> fetch('http://localhost:5300/cart')
+                loader: ()=> fetch('https://tech-valy-server-ot49yue2u-sharifs-projects-dda288d4.vercel.app/cart')
             },
             {
                 path: '/login',
@@ -45,17 +45,17 @@ const router = createBrowserRouter([
             {
                 path: '/brandProducts/:brand',
                 element: <BrandProducts></BrandProducts>,
-                loader: ({params})=> fetch(`http://localhost:5300/products/${params.brand}`)
+                loader: ({params})=> fetch(`https://tech-valy-server-ot49yue2u-sharifs-projects-dda288d4.vercel.app/products/${params.brand}`)
             },
             {
                 path: '/updateProduct/:id',
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5300/singleProduct/${params.id}`)
+                loader: ({params})=> fetch(`https://tech-valy-server-ot49yue2u-sharifs-projects-dda288d4.vercel.app/singleProduct/${params.id}`)
             },
             {
                 path: '/productDetails/:id',
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute> ,
-                loader: ({params})=> fetch(`http://localhost:5300/productDetails/${params.id}`)
+                loader: ({params})=> fetch(`https://tech-valy-server-ot49yue2u-sharifs-projects-dda288d4.vercel.app/productDetails/${params.id}`)
 
             }
            

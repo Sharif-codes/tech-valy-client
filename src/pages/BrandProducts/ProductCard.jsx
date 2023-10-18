@@ -8,7 +8,7 @@ const ProductCard = ({ products }) => {
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
-                <figure className="h-72" ><img className="w-full h-full" src={photo} alt="Shoes" /></figure>
+                <figure className="h-72" ><img className="w-full h-72" src={photo} alt="Shoes" /></figure>
                 <div className="card-body space-y-1">
                     <p className="text-lg font-semibold">Product name: {name}</p>
                     <p className="text-sm font-medium">Brand: {brand}</p>
