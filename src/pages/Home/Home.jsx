@@ -1,12 +1,42 @@
 import { useLoaderData } from "react-router-dom";
 import BrandCards from "../../component/BrandCrads/BrandCards";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 
 const Home = () => {
     const loadedBrand = useLoaderData()
 
-
+    const handleFeedback = e => {
+        e.preventDefault()
+        const form = e.target
+        const name = form.name.value
+        const location= form.location.value
+        const comment = form.comment.value
+        const feedback= {
+            name, location, comment
+        }
+        console.log(feedback)
+        fetch('http://localhost:5300/feedback', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(feedback)
+        })
+            .then(res => {
+                res.json()
+            })
+            .then(data =>
+                 console.log(data))
+                 Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Feedback Added Successfully!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+    }
     return (
         <div className="space-y-10">
 
@@ -29,6 +59,7 @@ const Home = () => {
                     loadedBrand.map(item => <BrandCards key={item.id} brand={item}></BrandCards>)
                 }
             </section>
+
 
             <section>
                 <h2 className="text-4xl text-pink-700 font-bold pb-10">Most Frequent Questions</h2>
@@ -59,6 +90,41 @@ const Home = () => {
                         <p>2$ per KG</p>
                     </div>
                 </div>
+            </section>
+            <section className="mx-auto space-y-7 text-center">
+                <h2 className="text-3xl text-blue-700 font-bold pb-10">User Experince</h2>
+                <div className="hero min-h-screen bg-base-200">
+                    <div className="hero-content flex-col lg:flex-row-reverse">
+
+                        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                            <form onSubmit={handleFeedback} className="card-body">
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Your Name</span>
+                                    </label>
+                                    <input type="text" name="name" placeholder="Your Name" className="input input-bordered" required />
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Your Location</span>
+                                    </label>
+                                    <input type="text" name="location" placeholder="Your location" className="input input-bordered" required />
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Your Comment</span>
+                                    </label>
+                                    <input type="text" name="comment" placeholder="Your comment" className="input input-bordered" required />
+                                    
+                                </div>
+                                <div className="form-control mt-6">
+                                    <button className="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
             </section>
         </div>
     );
