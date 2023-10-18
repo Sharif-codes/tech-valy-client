@@ -32,7 +32,7 @@ const ProductDetails = () => {
     }
     return (
         <div>
-            <div  className="card w-2/3 card-side bg-base-100 shadow-xl">
+            <div  className="card w-2/3 card-side bg-base-100 shadow-xl flex flex-col md:flex-row mx-auto">
                 <figure className="h-72 w-full"><img src={photo} className="w-full h-full"  alt="Movie" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>

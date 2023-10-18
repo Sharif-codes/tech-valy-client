@@ -14,9 +14,9 @@ const UpdateProduct = () => {
         const brand = form.brand.value
         const type = form.type.value
         const price = form.price.value
-        const description = form.description.value
+       
         const rating = form.rating.value
-        const newProduct = { photo, name, brand, type, price, description, rating }
+        const newProduct = { photo, name, brand, type, price, rating }
         console.log(newProduct)
          fetch(`http://localhost:5300/singleProduct/${_id}`,{
             method: 'PUT',
@@ -49,7 +49,7 @@ const UpdateProduct = () => {
                 <form onSubmit={handleUpdateProduct} className="flex justify-center">
 
                     <div className="md:px-24 px-4 py-10 space-y-4">
-                        <h2 className="text-center text-3xl font-bold text-green-700 md:py-3">Add New product</h2>
+                        <h2 className="text-center text-3xl font-bold text-green-700 md:py-3">Update product</h2>
                         <div className="gap-4 w-full pb4">
                             <div className="form-control w-full">
                                 <label className="label">
@@ -85,12 +85,7 @@ const UpdateProduct = () => {
                                 </label>
                                 <input defaultValue={price} type="number" name="price" placeholder="Enter Product Price" className="input input-bordered w-full" />
                             </div>
-                            <div className="form-control ">
-                                <label className="label">
-                                    <span className="label-text  text-lg font-lg ">Description</span>
-                                </label>
-                                <input defaultValue={description} type="text" name="description" placeholder="Enter Short Description" className="input input-bordered w-full" />
-                            </div>
+                            
                         </div>
                         <div className="form-control">
                             <label className="label">
