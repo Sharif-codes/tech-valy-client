@@ -1,5 +1,11 @@
 # Live link of client side
 - https://tech-valy.web.app
+# Technology used 
+- React
+- Tailwind
+- DaisyUi
+- Expresssjs
+- MongoDB
 
 # Features of my project
 - Products are available according to the brand name.
